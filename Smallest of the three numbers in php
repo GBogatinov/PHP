@@ -1,0 +1,12 @@
+<?php
+
+$numberOne = intval(readline());
+$numberTwo = intval(readline());
+$numberThree = intval(readline());
+
+function smallest($numberOne, $numberTwo, $numberThree)
+{
+    $numbers =  min($numberOne, $numberTwo, $numberThree);
+    echo $numbers;
+}
+smallest($numberOne, $numberTwo, $numberThree);
