@@ -1,0 +1,12 @@
+You will be given a count of wagons in a train n. On the next n lines you will receive how many people are going to get on that wagon. At the end print the whole train and after that the sum of the people in the train. 
+
+<?php
+$n = intval(readline());
+$arr = [];
+$sum = 0;
+for($i = 0;$i < $n; $i++){
+    $arr[$i] = intval(readline());
+    $sum += $arr[$i];
+}
+echo implode(" ", $arr);
+echo "\n$sum";
