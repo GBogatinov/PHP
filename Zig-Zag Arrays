@@ -1,0 +1,22 @@
+Write a program which creates 2 arrays. You will be given an integer n. On the next n lines you get 2 integers. Form 2 arrays as shown below.
+
+<?php
+$count = intval(readline());
+$arr1 =[];
+$arr2 =[];
+
+for($i = 0;$i < $count; $i++){
+    $tokens = explode(" ", readline());
+    $element1 = $tokens[0];
+    $element2 = $tokens[1];
+    if ($i % 2== 0){
+        $arr1[] = $element1;
+        $arr2[] = $element2;
+    }else {
+        $arr1[] = $element2;
+        $arr2[] = $element1;
+    }
+}
+echo implode(" ", $arr1);
+echo "\n";
+echo implode(" ", $arr2);
