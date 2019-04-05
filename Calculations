@@ -1,0 +1,49 @@
+<?php
+
+$command = readline();
+$a = readline();
+$b = readline();
+
+$output = checkAdd($command,$a,$b);
+$output = checkMultiply($command,$a,$b);
+$output = checkSubtract($command,$a,$b);
+$output = checkDivide($command,$a,$b);
+
+function checkAdd($com,$a,$b){
+switch ($com) {
+    case 'add':
+        $add = ($a + $b);
+        return $add;
+        break;
+}
+}
+function checkMultiply($com,$a,$b){
+    switch ($com) {
+        case 'multiply':
+            $multiply = ($a * $b);
+            return $multiply;
+            break;
+    }
+}
+function checkSubtract($com,$a,$b){
+    switch ($com) {
+        case 'subtract':
+            $subtract = ($a - $b);
+            return $subtract;
+            break;
+    }
+}
+function checkDivide($com,$a,$b){
+    switch ($com) {
+        case 'divide':
+            $divide = ($a / $b);
+            return $divide;
+            break;
+    }
+}
+
+echo checkDivide($command,$a,$b);
+echo checkAdd($command,$a,$b);
+echo checkMultiply($command,$a,$b);
+echo checkSubtract($command,$a,$b);
+
