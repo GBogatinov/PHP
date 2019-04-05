@@ -1,0 +1,12 @@
+<?php
+$string = readline();
+$times = intval(readline());
+
+function repeat($string, $repeat){
+    $resultString = '';
+    for($i = 0;$i < $repeat; $i++){
+        $resultString.=$string;
+    }
+    return $resultString;
+}
+echo repeat($string, 3);
