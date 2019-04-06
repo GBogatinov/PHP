@@ -1,0 +1,41 @@
+<?php
+$inputArray = array_map('intval', explode(' ',readline()));
+$command = readline();
+
+while($command!== "end"){
+$commandProp = explode(' ', $command);
+$commandAction = $commandProp[0];
+
+   switch ($commandAction){
+       case 'Add': {
+               $inputArray[] = $commandProp[1];
+               break;
+           }
+       case 'Remove': {
+           $index = array_search($commandProp[1], $inputArray);
+          if( $index!==false){
+              array_splice($inputArray, $index,1);
+          }
+           break;
+       }
+       case 'RemoveAt': {
+           $index = $commandProp[1];
+           if( $index!==false){
+               array_splice($inputArray, $index,1);
+           }
+           break;
+       }
+       case 'Insert': {
+           $index = $commandProp[2];
+           if( $index>=0 && $index <count($inputArray)){
+               array_splice($inputArray, $index,0,$commandProp[1]);
+           }
+           break;
+       }
+
+
+   }
+
+    $command = readline();
+}
+echo implode(' ', $inputArray);
