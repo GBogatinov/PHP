@@ -1,0 +1,71 @@
+<?php
+class Article
+{
+    private $title;
+    private $content;
+    private $author;
+
+    /**
+     * Article constructor.
+     * @param $title
+     * @param $content
+     * @param $author
+     */
+    public function __construct($title,$content,$author)
+    {
+        $this->title = $title;
+        $this->content = $content;
+        $this->author = $author;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    /**
+     * @param mixed $author
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
+public function __toString()
+{
+    return $this->title. ' - '.$this->content.' - '. $this->author;
+}
+
+}
+$article = explode(', ',readline());
+$myArticleObl = new Article($article[0],$article[1],$article[2]);
+$to = intval(readline());
+for($i = 0;$i < $to; $i++){
+    $command = explode(': ', readline());
+
+    switch ($command[0]){
+        case 'Edit': {
+            $myArticleObl->setContent($command[1]);
+            break;
+        }
+        case 'ChangeAuthor': {
+            $myArticleObl->setAuthor($command[1]);
+            break;
+        }
+        case 'Rename': {
+            $myArticleObl->setTitle($command[1]);
+            break;
+        }
+    }
+}
+echo $myArticleObl;
