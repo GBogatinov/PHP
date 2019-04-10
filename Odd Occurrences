@@ -1,0 +1,15 @@
+<?php
+$words = array_map('strtolower',explode(' ',readline()));
+$occurrences = [];
+
+foreach ($words as $word){
+    if(!key_exists($word, $occurrences))
+$occurrences[$word] =0;
+    $occurrences[$word]++;
+}
+foreach ($occurrences as $key => $val){
+    if($val % 2 !==0){
+        echo strtolower($key) . ' ';
+    }
+
+}
