@@ -1,0 +1,34 @@
+<?php
+$word = readline();
+$sum = 0;
+
+for($i = 0;$i < strlen($word); $i++){
+   $current = $word[$i];
+
+   switch ($current){
+       case "a";
+       $sum++;
+       break;
+   }
+    switch ($current){
+        case "e";
+            $sum+=2;
+            break;
+    }
+    switch ($current){
+        case "i";
+            $sum+=3;
+            break;
+    }
+    switch ($current){
+        case "o";
+            $sum+=4;
+            break;
+    }
+    switch ($current){
+        case "u";
+            $sum+=5;
+            break;
+    }
+}
+echo $sum;
