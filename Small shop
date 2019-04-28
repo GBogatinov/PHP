@@ -1,0 +1,46 @@
+<?php
+$product = readline();
+$city = readline();
+$count = intval(readline());
+
+if($city == "Sofia"){
+    if($product == "coffee"){
+        $price =  $count * 0.50;
+    }if($product == "water"){
+        $price =  $count * 0.80;
+    }if($product == "beer"){
+        $price =  $count * 1.20;
+    }if($product == "sweets"){
+        $price =  $count * 1.45;
+    }if($product == "peanuts"){
+        $price =  $count * 1.60;
+    }
+
+}else if($city == "Plovdiv"){
+    if($product == "coffee"){
+        $price =  $count * 0.40;
+    }if($product == "water"){
+        $price =  $count * 0.70;
+    }if($product == "beer"){
+        $price =  $count * 1.15;
+    }if($product == "sweets"){
+        $price =  $count * 1.30;
+    }if($product == "peanuts"){
+        $price =  $count * 1.50;
+    }
+
+}else if($city == "Varna"){
+    if($product == "coffee"){
+        $price =  $count * 0.45;
+    }if($product == "water"){
+        $price =  $count * 0.70;
+    }if($product == "beer"){
+        $price =  $count * 1.10;
+    }if($product == "sweets"){
+        $price =  $count * 1.35;
+    }if($product == "peanuts"){
+        $price =  $count * 1.55;
+    }
+
+}
+echo $price;
