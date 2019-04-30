@@ -1,0 +1,32 @@
+<?php
+$budget = intval(readline());
+$season = readline();
+$fisherman = intval(readline());
+$priceForRent = 0;
+$total = 0;
+$sum = 0;
+if($season == "Spring"){
+    $priceForRent = 3000;
+}else if($season == "Summer" || $season == "Autumn"){
+    $priceForRent = 4200;
+}else if($season == "Winter"){
+    $priceForRent = 2600;
+}
+
+if($fisherman <= 6){
+    $priceForRent *= 0.9;
+}else if($fisherman > 7 && $fisherman <= 11){
+    $priceForRent *= 0.85;
+}else if($fisherman >= 12){
+    $priceForRent *= 0.75;
+}
+if($fisherman % 2 == 0 && ! ($season == "Autumn")){
+    $priceForRent *= 0.95;
+}
+
+if($budget >= $priceForRent){
+
+    printf("Yes! You have %.2f leva left.", $budget - $priceForRent);
+}else {
+    printf("Not enough money! You need %.2f leva.", $priceForRent - $budget);
+}
